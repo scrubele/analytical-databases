@@ -19,3 +19,10 @@ result = r.client_list()
 print("CLIENT LIST returned : ")
 for c in result:
     print("id : " + c['id'] + ", addr : " + c['addr'])
+
+from urllib.request import urlopen
+import json
+print('here')
+response = urlopen(f'https://data.cityofchicago.org/resource/ijzp-q8t2.json?$limit={100}&$offset={100}')
+data = json.load(response)   
+print (data)
