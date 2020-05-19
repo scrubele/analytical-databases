@@ -18,13 +18,13 @@ WRITE_TO_REDIS = False
 
 #Redis
 REDIS_HOST_NAME = "example.redis.cache.windows.net"
-REDIS_KEY = "enL88Gh80HBde7Od2kNj3HWYWBPlE0mnRt0KNGxgrmw="
+REDIS_KEY = "redis_key"
 #Event hub
-EVENT_HUB_CONNNECTION_STRING = "Endpoint=sb://example.servicebus.windows.net/;SharedAccessKeyName=example;SharedAccessKey=muNgQGaRljw8llADlN4IWJY2dFYxLP8bLDkjHFQI4/I="
+EVENT_HUB_CONNNECTION_STRING = "Endpoint=sb://example.servicebus.windows.net/;SharedAccessKeyName=example;SharedAccessKey=shared_key"
 EVENT_HUB_NAME = "example"
 CONSUMER_GROUP = "$Default"
 #Storage
-STORAGE_CONNNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=example;AccountKey=xKIJUalbEpzis97zd7U0IX+mxL7S3Ly+6xakK9kyKIoprZ66H5GMZ0VDJ34+zaNXwx7DNYtCvPXuBR0BH2R9wQ==;EndpointSuffix=core.windows.net"
+STORAGE_CONNNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=example;AccountKey=account_key;EndpointSuffix=core.windows.net"
 BLOB_NAME = "example"
 ```
 
