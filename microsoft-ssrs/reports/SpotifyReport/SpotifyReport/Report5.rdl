@@ -95,7 +95,7 @@ FROM            fact_popularity INNER JOIN
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.03125in</Width>
+                  <Width>0.90625in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -111,7 +111,7 @@ FROM            fact_popularity INNER JOIN
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>rating</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                   </Style>
@@ -141,21 +141,21 @@ FROM            fact_popularity INNER JOIN
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="number_of_likes">
+                        <Textbox Name="rating">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!rating.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>number_of_likes</rd:DefaultName>
+                          <rd:DefaultName>rating</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -183,10 +183,8 @@ FROM            fact_popularity INNER JOIN
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
+                                  <Value>=Max(Fields!length.Value, "DataSet1")</Value>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -371,7 +369,7 @@ FROM            fact_popularity INNER JOIN
                   <Group Name="year">
                     <DocumentMapLabel>=Fields!basic_user_id.Value</DocumentMapLabel>
                     <GroupExpressions>
-                      <GroupExpression>=Fields!year.Value</GroupExpression>
+                      <GroupExpression>=Fields!day.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
@@ -639,9 +637,9 @@ FROM            fact_popularity INNER JOIN
             <Top>0.625in</Top>
             <Left>1.23959in</Left>
             <Height>0.75in</Height>
-            <Width>4.02083in</Width>
+            <Width>4.89583in</Width>
             <Visibility>
-              <Hidden>=Fields!number_of_likes.Value=0</Hidden>
+              <Hidden>=iif(Fields!number_of_likes.Value&gt;4, True, False)</Hidden>
             </Visibility>
             <Style>
               <Border>

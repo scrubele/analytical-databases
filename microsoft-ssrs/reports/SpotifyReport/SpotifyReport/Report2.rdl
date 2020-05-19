@@ -95,7 +95,7 @@ FROM            fact_popularity INNER JOIN
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.03125in</Width>
+                  <Width>0.625in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -104,7 +104,7 @@ FROM            fact_popularity INNER JOIN
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox61">
+                        <Textbox Name="Textbox3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -120,7 +120,7 @@ FROM            fact_popularity INNER JOIN
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox61</rd:DefaultName>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -141,7 +141,7 @@ FROM            fact_popularity INNER JOIN
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="number_of_likes">
+                        <Textbox Name="Textbox4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -155,7 +155,7 @@ FROM            fact_popularity INNER JOIN
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>number_of_likes</rd:DefaultName>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -176,7 +176,7 @@ FROM            fact_popularity INNER JOIN
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox63">
+                        <Textbox Name="Textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -184,15 +184,13 @@ FROM            fact_popularity INNER JOIN
                               <TextRuns>
                                 <TextRun>
                                   <Value />
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox63</rd:DefaultName>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -212,7 +210,11 @@ FROM            fact_popularity INNER JOIN
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
-                <TablixMember />
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                </TablixMember>
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -638,7 +640,7 @@ FROM            fact_popularity INNER JOIN
             <Top>0.56125in</Top>
             <Left>1.33208in</Left>
             <Height>0.75in</Height>
-            <Width>4.02083in</Width>
+            <Width>4.61458in</Width>
             <Visibility>
               <Hidden>=Fields!number_of_likes.Value=0</Hidden>
             </Visibility>
