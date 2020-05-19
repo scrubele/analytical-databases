@@ -26,6 +26,6 @@ CONSUMER_GROUP = "$Default"
 #Storage
 STORAGE_CONNNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=example;AccountKey=xKIJUalbEpzis97zd7U0IX+mxL7S3Ly+6xakK9kyKIoprZ66H5GMZ0VDJ34+zaNXwx7DNYtCvPXuBR0BH2R9wQ==;EndpointSuffix=core.windows.net"
 BLOB_NAME = "example"
-``
+```
 
-If CONSOLE_LOGGING is True -> logs are going to console, False -> logs are going to Azure Event Hub.
+If CONSOLE_LOGING is True -> logs are going to console, False -> logs are going to Azure Event Hub.
