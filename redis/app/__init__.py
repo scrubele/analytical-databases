@@ -15,5 +15,5 @@ app.logger.setLevel(logging.INFO)
 from app import loggers
 from app import constants
 from app import views
-from app import redis_py
+from app import redis_init
 # from app.event_hub import sender, receiver

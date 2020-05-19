@@ -10,7 +10,7 @@ from app.loggers import context
 
 @app.before_request
 def before_request_func():
-    context.do_logging('Request is started')
+    pass
 
 
 @app.route('/', methods=['POST'])
@@ -28,10 +28,9 @@ def post():
 
 @app.after_request
 def after_request_func(response):
-    context.do_logging('Request is finished')
     return response
 
 
 @app.teardown_request
 def after_all_requests(response):
-    context.do_logging('Request teardown')
+    pass

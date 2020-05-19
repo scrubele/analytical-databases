@@ -11,7 +11,6 @@ class Context():
         pass
     
     def __init__(self, logging: Logging) -> None:
-
         self._logging = logging
 
     @property
@@ -25,7 +24,6 @@ class Context():
 
     def do_logging(self, data) -> None:
         self._logging.log(data)
-        # ...
 
 
 class Logging(ABC):
