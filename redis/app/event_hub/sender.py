@@ -1,13 +1,8 @@
 from app import app
-# from config import Config
+from app.constants import Config
 import asyncio
 from azure.eventhub.aio import EventHubProducerClient
 from azure.eventhub import EventData
-
-class Config:
-    EVENT_HUB_CONNNECTION_STRING = "Endpoint=sb://lab6-iot.servicebus.windows.net/;SharedAccessKeyName=new;SharedAccessKey=muNgQGaRljw8llADlN4IWJY2dFYxLP8bLDkjHFQI4/I="
-    EVENT_HUB_NAME = "red"
-    CONSUMER_GROUP = "$Default"
 
 
 async def send_data(data):
