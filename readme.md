@@ -28,9 +28,40 @@ REDIS_KEY = "redis_key"
 EVENT_HUB_CONNNECTION_STRING = "Endpoint=sb://example.servicebus.windows.net/;SharedAccessKeyName=example;SharedAccessKey=shared_key"
 EVENT_HUB_NAME = "example"
 CONSUMER_GROUP = "$Default"
-#Storage
-STORAGE_CONNNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=example;AccountKey=account_key;EndpointSuffix=core.windows.net"
-BLOB_NAME = "example"
 ```
 
 If CONSOLE_LOGING is True -> logs are going to console, False -> logs are going to Azure Event Hub.
+
+### Writing results to Redis
+If WRITE_TO_REDIS is True:
+
+Redis console:
+```
+>KEYS *
+1) "0"
+2) 1) "test"
+   2) "file https://data.cityofchicago.org/resource/ijzp-q8t2.json"
+>GET "file https://data.cityofchicago.org/resource/ijzp-q8t2.json"
+"Started"
+>KEYS *
+1) "0"
+2) 1) "file https://data.cityofchicago.org/resource/ijzp-q8t2.json rows 0-100"
+
+   2) "test"
+
+   3) "file https://data.cityofchicago.org/resource/ijzp-q8t2.json"
+
+>GET "file https://data.cityofchicago.org/resource/ijzp-q8t2.json rows 0-100"
+"Completed"
+>KEYS *
+1) "0"
+2) 1) "file https://data.cityofchicago.org/resource/ijzp-q8t2.json rows 0-100"
+
+   2) "test"
+
+   3) "file https://data.cityofchicago.org/resource/ijzp-q8t2.json"
+
+>GET "file https://data.cityofchicago.org/resource/ijzp-q8t2.json"
+"Completed"
+
+```

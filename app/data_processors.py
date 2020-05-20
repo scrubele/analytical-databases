@@ -26,7 +26,7 @@ class RedisController:
     @classmethod
     def log(cls, data):
         if WRITE_TO_REDIS:
-            context.do_logging(f"rows {offset}-{offset+self.limit} added")
+            context.do_logging(data)
         else:
             return ""
 

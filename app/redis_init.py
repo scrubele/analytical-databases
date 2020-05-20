@@ -9,5 +9,6 @@ r = redis.StrictRedis(host=Config.REDIS_HOST_NAME, port=6380,
 
 result = r.ping()
 app.logger.info("Ping returned : " + str(result))
-
+r.set("test", 100)
+print(r.get("test"))
 # get_data_from_url('https://data.cityofchicago.org/resource/ijzp-q8t2.json', 100, 100)
