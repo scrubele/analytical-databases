@@ -1,3 +1,5 @@
 # Business inteligence projects
 
 A bunch of projects created using Microsoft SQL Server Integration Services.
++ [The integration between Azure Redis Cache and Azure Event Hubs](https://github.com/scrubele/analytical-databases/tree/redis)
++ [The integration between Azure Event Hubs and Databricks](https://github.com/scrubele/analytical-databases/tree/databricks)
