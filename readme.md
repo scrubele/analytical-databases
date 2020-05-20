@@ -10,6 +10,11 @@ $ pip3 install -r requirements.txt
 $ python3 runserver.py
 ```
 
+**Installation and running via `setup.bash`**:
+```shell
+bash run.bash
+```
+
 
 **Add .env сonfig file with the next content:**
 ```
