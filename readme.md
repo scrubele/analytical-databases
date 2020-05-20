@@ -32,6 +32,13 @@ CONSUMER_GROUP = "$Default"
 
 If CONSOLE_LOGING is True -> logs are going to console, False -> logs are going to Azure Event Hub.
 
+
+##Running an integration
+
+```shell
+curl -d "url=https://data.cityofchicago.org/resource/ijzp-q8t2.json" -X POST http://0.0.0.0:8080
+```
+
 ### Writing results to Redis
 If WRITE_TO_REDIS is True:
 
@@ -64,4 +71,10 @@ Redis console:
 >GET "file https://data.cityofchicago.org/resource/ijzp-q8t2.json"
 "Completed"
 
+```
+
+If we will post the same file second time, in Redis we will receive following:
+```
+>GET "file https://data.cityofchicago.org/resource/ijzp-q8t2.json"
+"Retry attempt, ignore a file"
 ```
