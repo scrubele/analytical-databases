@@ -2,7 +2,7 @@ from __future__ import annotations
 from app import app
 from abc import ABC, abstractmethod
 from app.event_hub.sender import send_data, loop
-from app.constants import CONSOLE_LOGGING
+from app.constants import Config
 from app.event_hub.sender import send_data, loop
 
 class Context():
@@ -52,7 +52,7 @@ class EventHubLogging(Logging):
 
 context = Context
 
-if (CONSOLE_LOGGING):
+if (Config.CONSOLE_LOGGING):
     context = Context(ConsoleLogging())
 else:
     context = Context(EventHubLogging())

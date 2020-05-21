@@ -7,6 +7,7 @@ from app import app
 from app.data_processors import DataProcessor
 import os
 from app.loggers import context
+from app.constants import ROWS_NUMBER
 
 @app.before_request
 def before_request_func():
@@ -18,7 +19,10 @@ def post():
     form_values = request.form.to_dict(flat=True)
     if 'url' in form_values:
         url = form_values['url']
-        data_processor = DataProcessor(url, 100)
+        rows_per_time = int(form_values['rows_per_time']) if 'rows_per_time' in form_values else ROWS_PER_TIME
+        rows_number = int(form_values['rows_number']) if 'rows_number' in form_values else ROWS_NUMBER
+        offset = int(form_values['offset']) if 'offset' in form_values else OFFSET
+        data_processor = DataProcessor(url, rows_number, rows_per_time, offset)
         get_data = data_processor.loop_data()
         return jsonify(get_data)
     else:

@@ -3,29 +3,26 @@ from urllib.request import urlopen
 import json
 from app.loggers import context
 from app.redis_init import r
-from app.constants import WRITE_TO_REDIS
-
-MAX_ROW_NUMBER = 200
-OFFSET = 100
+from app.constants import Config
 
 
 class RedisController:
 
     @classmethod
     def set(cls, data, value):
-        if WRITE_TO_REDIS:
+        if Config.WRITE_TO_REDIS:
             r.set(data, value)
 
     @classmethod
     def get(cls, topic):
-        if WRITE_TO_REDIS:
+        if Config.WRITE_TO_REDIS:
             return r.get(topic)
         else:
             return ""
 
     @classmethod
     def log(cls, data):
-        if WRITE_TO_REDIS:
+        if Config.WRITE_TO_REDIS:
             context.do_logging(data)
         else:
             return ""
@@ -33,9 +30,11 @@ class RedisController:
 
 class DataProcessor:
 
-    def __init__(self, url, limit):
+    def __init__(self, url, rows_number, rows_per_time, offset):
         self.base_url = url
-        self.limit = limit
+        self.limit = rows_per_time
+        self.rows_number = rows_number
+        self.offset = offset
 
     def get_json_part(self, offset):
         url = f'{self.base_url}?$limit={self.limit}&$offset={offset}'
@@ -61,9 +60,9 @@ class DataProcessor:
         RedisController.set(f"file {self.base_url}", "Started")
         offset = 0
         self.data_list = []
-        while (offset < MAX_ROW_NUMBER):
+        while (offset < self.rows_number):
             data = self.get_data_from_url(offset)
-            offset += OFFSET
+            offset += self.offset
             self.data_list += data
         RedisController.set(f"file {self.base_url}", "Completed")
         return self.data_list
