@@ -1,4 +1,4 @@
-# Business inteligence projects
+# Business intelligence projects
 
 + [A bunch of projects created using Microsoft SQL Server Integration Services.](https://github.com/scrubele/analytical-databases/tree/microsoft-ssis-projects)
 + [The project created using Microsoft SQL Server Reporting Services.](https://github.com/scrubele/analytical-databases/tree/microsoft-ssrs-projects)
